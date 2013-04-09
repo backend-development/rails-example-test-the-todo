@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Todo</title>
+  <title>Todo-Liste mit jQuery und Rails</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div class="container">
+    <div class="row">
+      <div class="span2">
+        <!--Left Sidebar content-->
+      </div>
+      <div class="span8">
+        <%= yield %>
+        <footer>
+          <p>Based on 
+            <a href="http://www.buildfortheweb.com/demo/html/jquery-crash-course/jquery_todos.html">jquery todos</a>
+            and <a href="http://twitter.github.io/bootstrap/">bootstrap</a>
+          </p>
+        </footer>
+      </div>
+      <div class="span2">
+        <!--Right Sidebar content-->
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

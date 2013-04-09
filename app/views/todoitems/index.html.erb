@@ -1,0 +1,14 @@
+<h1>ToDo</h1>
+
+<div class="enter_todo">
+  <form id="todo_form" action="/jquery_todos.html" method="POST">
+    <input type="text" size="55" id="todo_description" name="todo_description"/>
+    <input type="submit" id="add_todo" value="Add"/>
+  </form>
+</div>
+
+<div class="todo_list">
+  <%= render "liste", :locals => { :todoitems => @todoitems } %>
+</div>  
+
+

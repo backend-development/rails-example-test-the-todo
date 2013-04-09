@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+div.todo_list > div.todo > div {
+  float:left;             
+}
+
+div.todo_list > div.todo > div.todo_description {
+  margin-left:5px;
+}
+
+div.todo_list > div.checked {
+  text-decoration: line-through;
+  background: #eee;
+}

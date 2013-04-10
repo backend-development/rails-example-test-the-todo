@@ -8,8 +8,8 @@ feature "Homepage displays stuff" do
     visit "/"
     expect(page).to have_text("Todolists")
 
-    fill_in :title, :with => "Neue Liste"
-    click_link "Liste anlegen"
+    fill_in "todolist[title]", :with => "Neue Liste"
+    click_button "Liste anlegen"
 
     expect(page).to have_text("Home / Neue Liste")
   end

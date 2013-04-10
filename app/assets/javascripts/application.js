@@ -17,7 +17,7 @@
 
 
 $(document).ready( function() {         
-  $('.check_todo').live( 'click', function() {
+  $('.check_todo').on( 'click', function() {
     var todo = $(this).parent().parent();
     todo.toggleClass('checked');
   });

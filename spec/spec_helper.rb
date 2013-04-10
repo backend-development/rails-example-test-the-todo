@@ -40,3 +40,15 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+RSpec::Matchers.define :be_the_same_time_as do |expected|
+  match do |actual|
+    expected.to_i == actual.to_i
+  end
+  failure_message_for_should do |actual|
+    "expected that #{actual} (#{actual.to_i} in seconds) would be a the same as #{expected} (#{expected.to_i} in seconds)"
+  end
+  failure_message_for_should_not do |actual|
+    "expected that #{actual} (#{actual.to_i} in seconds) would not be a the same as #{expected} (#{expected.to_i} in seconds)"
+  end
+end

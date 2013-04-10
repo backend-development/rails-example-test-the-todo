@@ -1,4 +1,7 @@
 Todo::Application.routes.draw do
-  resources :todoitems, :only => [:index, :create, :update, :destroy]
-  root :to => 'todoitems#index'
+  resources :todolists, :only => [:index, :show, :create, :update, :destroy]
+
+
+  resources :todoitems, :only => [:create, :update, :destroy]
+  root :to => 'todolists#index'
 end

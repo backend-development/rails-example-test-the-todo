@@ -1,0 +1,23 @@
+<ul class="breadcrumb">
+  <li class="active">Home</li>
+</ul>
+    
+    <h1>Todolists</h1>
+
+
+<%= form_for(@todolist) do |f| %>
+  <div class="field">
+    <%= f.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= f.submit :value => "Liste anlegen" %>
+  </div>
+<% end %>
+
+<ul>
+<% @todolists.each do |todolist| %>
+    <li><%= link_to todolist.title, todolist %></li>
+<% end %>
+</ul>
+
+

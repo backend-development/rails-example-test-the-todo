@@ -21,10 +21,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.0"
-  gem "capybara"
+  gem 'rspec-rails', '~> 2.0'
+  gem 'capybara'
   gem 'poltergeist'
+  gem 'accept_values_for'
+  gem 'timecop'
 end

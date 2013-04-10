@@ -24,3 +24,12 @@ div.todo_list > div.checked {
   text-decoration: line-through;
   background: #eee;
 }
+
+div.todo_list label {
+  display: inline;
+  line-height: 30px;
+}
+
+div.todo_list .is_done label {
+  text-decoration: line-through;
+}

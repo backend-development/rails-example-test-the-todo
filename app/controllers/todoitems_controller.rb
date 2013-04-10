@@ -17,10 +17,10 @@ class TodoitemsController < ApplicationController
 
     respond_to do |format|
       if @todoitem.save
-        format.html { redirect_to @todoitem, notice: 'Todoitem was successfully created.' }
+        format.html { redirect_to todolist_path(@todoitem.todolist), notice: 'Todoitem was successfully created.' }
         format.json { render json: @todoitem, status: :created, location: @todoitem }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to todolist_path( params[:todoitem][:todolist_id]  ), notice: 'Todoitem was NOT created.' }
         format.json { render json: @todoitem.errors, status: :unprocessable_entity }
       end
     end

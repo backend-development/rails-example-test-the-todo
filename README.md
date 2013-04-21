@@ -1,7 +1,7 @@
 Welcome to The "Todo"-App
 ====
 
-This App will help you learn about Testing Rails with rspec and phantomjs.
+This App will help you learn about Testing Rails with rspec and phantomjs. It's part of a [textbook on web engineering](http://web-engineering.github.com )
 
 It also shows the usage of 
 

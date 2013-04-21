@@ -1,0 +1,5 @@
+$('div.todo_list').html('<%= j render(:partial => "todolist_items", :locals => { :todolist => @todolist }) %>');
+$('input[type=submit]').hide();
+$('input[type=checkbox]').on('click', function(){
+  $(this).closest('form').submit();
+});

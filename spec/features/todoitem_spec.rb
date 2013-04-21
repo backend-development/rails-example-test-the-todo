@@ -12,14 +12,14 @@ feature "Homepage displays stuff" do
     visit todolist_path( @todolist )
     expect(page).to have_text( @todolist.title )
 
-    fill_in :todoitem_text, :with => "Alter Punkt"
+    fill_in :todoitem_text, with:  "Alter Punkt"
     click_button "Eintragen"
 
     expect(page).to have_text("Todoitem was successfully created")
     expect(page).to have_text("Alter Punkt")
     expect( find_field("Alter Punkt") ).to_not be_checked
 
-    fill_in :todoitem_text, :with => "Neuer Punkt"
+    fill_in :todoitem_text, with:  "Neuer Punkt"
     click_button "Eintragen"
 
     expect(page).to have_text("Alter Punkt")
@@ -35,8 +35,14 @@ feature "Homepage displays stuff" do
 
   end
 
-  scenario "with javascript", :js => true do
-    visit "/"
+  scenario "with javascript", js: true do
+    visit todolist_path( @todolist )
+    expect(page).to have_text( @todolist.title )
+
+    fill_in :todoitem_text, with: "Alter Punkt\n"
+    expect(page).to have_text("Alter Punkt item")
+    fill_in :todoitem_text, with:  "Neuer Punkt\n"
+    expect(page).to have_text("Neuer Punkt item")
   end
 
 end

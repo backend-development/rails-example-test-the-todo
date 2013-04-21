@@ -14,11 +14,12 @@ describe Todoitem do
 
   it "sets done_at" do
     t = Todoitem.create!( :text => "do something" )
-    Timecop.freeze
-    t.done = true
-    t.save!
-    t.reload
-    t.done_at.should == Time.zone.now
+    Timecop.freeze do
+      t.done = true
+      t.save!
+      t.reload
+      t.done_at.should == Time.zone.now
+    end
   end
 
 end

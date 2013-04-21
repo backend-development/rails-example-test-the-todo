@@ -19,6 +19,7 @@ class TodoitemsController < ApplicationController
       if @todoitem.save
         format.html { redirect_to todolist_path(@todoitem.todolist), notice: 'Todoitem was successfully created.' }
         format.json { render json: @todoitem, status: :created, location: @todoitem }
+        format.js
       else
         format.html { redirect_to todolist_path( params[:todoitem][:todolist_id]  ), notice: 'Todoitem was NOT created.' }
         format.json { render json: @todoitem.errors, status: :unprocessable_entity }

@@ -8,7 +8,7 @@
 
 <div class="enter_todo">
 
-  <%= form_for(@todoitem) do |f| %>
+  <%= form_for @todoitem, remote: true do |f| %>
     <%= f.hidden_field :todolist_id, :value => @todolist.id %>
     <div class="field">
       <%= f.text_field :text, :autofocus => "autofocus" %>
@@ -21,22 +21,8 @@
 </div>
 
 <div class="todo_list">
-  <%= form_for(@todolist) do |f| %>
+  <%= render :partial => "todolist_items", :locals => { :todolist => @todolist } %>
 
-    <% i=0 %>
-    <%= f.fields_for :todoitems do |f2| %>
-      
-      <div class="<%= f2.object.done ? "is_done" : "is_not_done" %>">
-        <%= f2.check_box :done %>
-        <label for="todolist_todoitems_attributes_<%= i %>_done">
-          <%= f2.object.text %>
-        </label>
-      </div>
-
-       <% i+=1 %>
-    <% end %>
-    <%= f.submit :value => "Speichern" %>
-  <% end %>
 </div>  
 
 

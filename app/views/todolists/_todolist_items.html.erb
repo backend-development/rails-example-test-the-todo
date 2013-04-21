@@ -1,0 +1,16 @@
+<%= form_for(todolist, remote: true) do |f| %>
+
+  <% i=0 %>
+  <%= f.fields_for :todoitems do |f2| %>
+
+    <div class="<%= f2.object.done ? "is_done" : "is_not_done" %>">
+      <%= f2.check_box :done %>
+      <label for="todolist_todoitems_attributes_<%= i %>_done">
+        <%= f2.object.text %> <small>item</small>
+      </label>
+    </div>
+
+    <% i+=1 %>
+  <% end %>
+  <%= f.submit :value => "Speichern" %>
+<% end %>

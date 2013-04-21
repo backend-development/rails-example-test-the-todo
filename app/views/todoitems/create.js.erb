@@ -1,0 +1,2 @@
+$('div.todo_list').html('<%= j render(:partial => "todolists/todolist_items", :locals => { :todolist => @todoitem.todolist }) %>');
+$('input[type=submit]').hide();
